@@ -8,13 +8,13 @@ import { mindfullness, movement, pranayama, healing, spiritual, focused } from '
 const meditate = () => {
   const router = useRouter();
   const item = useLocalSearchParams();
-  const [data, setData] = useState([]); // Initialize empty data array
+  const [data, setData] = useState([]); 
 
   useEffect(() => {
-    // Debugging: log the received item
+
     console.log('Received item.name:', item.name);
 
-    // Match and set data based on the item name
+
     switch (item.name) {
       case 'Focused':
         setData(focused);
@@ -38,9 +38,7 @@ const meditate = () => {
         setData([]);
     }
 
-    // Debugging: log the final data set
-    console.log('Set data:', data);
-  }, [item.name]); // Run whenever item.name changes
+  }, [item.name]); 
 
   return (
     <SafeAreaView style={styles.container}>
