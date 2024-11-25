@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { Ionicons } from '@expo/vector-icons';
+import ImageSlider from '../components/ImageSlider';
 const home = () => {
   return (
     <SafeAreaView className="flex-1 bg-white flex space-y-5 px-2" edges={['top']}>
@@ -37,6 +38,10 @@ const home = () => {
             </View>
             </TouchableOpacity>
         </View>
+      </View>
+
+      <View>
+        <ImageSlider />
       </View>
     </SafeAreaView>
   )
