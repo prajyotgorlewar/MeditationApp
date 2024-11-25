@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "meditation-app",
+    "scheme": "meditation-app",
     "slug": "meditation-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,7 +23,12 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
