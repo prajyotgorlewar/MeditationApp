@@ -29,7 +29,7 @@ const Meditate = () => {
 
 const Card = ({ item, index ,router}) => {
   return (
-    <Animated.View entering={FadeInDown.delay(250).springify()}  className="bg-gray-500 rounded-[1rem] p-2" style={{ marginBottom: 16 }}>
+    <Animated.View entering={FadeInDown.delay(250).springify()}  className="bg-gray-500 rounded-[1rem] p-2 " style={{ marginBottom: 16 }}>
       <TouchableOpacity
         onPress={()=>router.push({pathname:'/meditate',params:item})}
       >

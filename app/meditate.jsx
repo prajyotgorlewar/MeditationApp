@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { mindfullness, movement, pranayama, healing, spiritual, focused } from '../constants/meditate';
+import { mindfullness, movement, pranayama, healing, spiritual, focused, recommended } from '../constants/meditate';
+import Recommended from '../components/recommended';
 
 const meditate = () => {
   const router = useRouter();
   const item = useLocalSearchParams();
-  const [data, setData] = useState([]); 
+  const [data, setData] = useState([]);
 
   useEffect(() => {
 
@@ -38,10 +39,10 @@ const meditate = () => {
         setData([]);
     }
 
-  }, [item.name]); 
+  }, [item.name]);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="flex-1 bg-gray-200 flex space-y-5 px-2" edges={['top']}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()}>
@@ -49,19 +50,24 @@ const meditate = () => {
         </TouchableOpacity>
         <Text style={styles.title}>{item.name}</Text>
       </View>
+      <View>
 
         <Text className="text-3xl  mx-8 underline">Audio Shorts</Text>
-      {/* FlatList */}
 
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.name}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.listContainer}
-        renderItem={({ item, index }) => <Card item={item} index={index} />}
-        ListEmptyComponent={<Text style={styles.emptyText}>No data available</Text>}
-      />
+        <FlatList
+          data={data}
+          keyExtractor={(item) => item.name}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.listContainer}
+          renderItem={({ item, index }) => <Card item={item} index={index} />}
+          ListEmptyComponent={<Text style={styles.emptyText}>No data available</Text>}
+        />
+        <View className="h-1 w-full bg-black mt-3"></View>
+      </View>
+      <View>
+        <Recommended/>
+      </View>
     </SafeAreaView>
   );
 };
@@ -71,14 +77,15 @@ const Card = ({ item, index }) => {
     <View style={styles.card} className="h-[230px] p-6 rounded-lg">
       <TouchableOpacity>
         <Image source={item.image} style={styles.cardImage} />
-    <View className="mt-2">
-    <Text className="text-white">{item.name}</Text>
-    <Text className="text-xs text-gray-400">{item.subname}</Text>
-    </View>
+        <View className="mt-2">
+          <Text className="text-white">{item.name}</Text>
+          <Text className="text-xs text-gray-400">{item.subname}</Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
 };
+
 
 export default meditate;
 
@@ -109,8 +116,8 @@ const styles = StyleSheet.create({
   card: {
     marginHorizontal: 8,
     alignItems: 'center',
-    
-    backgroundColor:"black"
+
+    backgroundColor: "black"
   },
   cardImage: {
     width: 150,

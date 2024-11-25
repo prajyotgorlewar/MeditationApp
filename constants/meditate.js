@@ -136,3 +136,30 @@ export const focused=[
     },
 
 ]
+
+export const recommended=[
+    {
+        name:"Dreamy Melodies",
+        image:require('../assets/images/rcd1.png')
+    },
+    {
+        name:"Whispering Waves",
+        image:require('../assets/images/rcd2.png')
+    },
+    {
+        name:"Sleepytime Symp",
+        image:require('../assets/images/rcd3.png')
+    },
+    {
+        name:"Restful Rhapsody",
+        image:require('../assets/images/rcd4.png')
+    },
+    {
+        name:"Sleep Sanctuary",
+        image:require('../assets/images/rcd5.png')
+    },
+    {
+        name:"Peaceful Piano",
+        image:require('../assets/images/rcd6.png')
+    },
+]
