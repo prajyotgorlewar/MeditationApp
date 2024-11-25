@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <View style={styles.container}>
         <TouchableOpacity onPress={()=>router.push("home")}>
-            <Text>Click</Text>
+            <Text >Click</Text>
         </TouchableOpacity>
     </View>
   );
