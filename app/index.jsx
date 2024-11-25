@@ -3,7 +3,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { LinearGradient } from 'expo-linear-gradient'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import Animated,{ FadeIn, FadeInDown, FadeOut } from 'react-native-reanimated';
+import Animated,{  FadeInDown } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 
 const index = () => {
