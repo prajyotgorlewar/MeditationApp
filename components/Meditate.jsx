@@ -9,7 +9,7 @@ const Meditate = () => {
 
   return (
     <View style={{ marginHorizontal: 16 }}>
-        <Text className="text-2xl text-center">MEDITATE</Text>
+        <Text className="text-2xl text-center text-white pb-4">MEDITATE</Text>
       <FlatList
         data={meditates}
         numColumns={2}
@@ -29,11 +29,11 @@ const Meditate = () => {
 
 const Card = ({ item, index ,router}) => {
   return (
-    <Animated.View entering={FadeInDown.delay(250).springify()}  className="bg-gray-500 rounded-[1rem] p-2 " style={{ marginBottom: 16 }}>
+    <Animated.View entering={FadeInDown.delay(250).springify()}  className=" p-2 " style={{ marginBottom: 16 }}>
       <TouchableOpacity
         onPress={()=>router.push({pathname:'/meditate',params:item})}
       >
-        <Image className="rounded-md" source={item.image} style={{ width: 150, height: 150 }} />
+        <Image className="" source={item.image} style={{ width: 150, height: 150 }} />
         <Text className="text-white text-lg" style={{ textAlign: 'center', marginTop: 8 }}>{item.name}</Text>
       </TouchableOpacity>
     </Animated.View>

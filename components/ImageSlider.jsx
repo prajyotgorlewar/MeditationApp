@@ -73,7 +73,7 @@ export default function ImageSlider() {
             </View>
           )}
         />
-        <View className="h-1 w-full bg-gray-600 mb-4">
+        <View className="h-1 w-full bg-[#84bcfd29] mb-4">
 
         </View>
       </View>

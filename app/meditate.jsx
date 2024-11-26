@@ -4,7 +4,9 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { mindfullness, movement, pranayama, healing, spiritual, focused, recommended } from '../constants/meditate';
-import Recommended from '../components/recommended';
+
+import Recommend from '../components/Recommend';
+
 
 const meditate = () => {
   const router = useRouter();
@@ -41,18 +43,20 @@ const meditate = () => {
 
   }, [item.name]);
 
+
+
   return (
-    <SafeAreaView className="flex-1 bg-gray-200 flex space-y-5 px-2" edges={['top']}>
+    <SafeAreaView className="flex-1 bg-[#000a15] flex space-y-5 px-2" edges={['top']}>
       {/* Header */}
-      <View style={styles.header}>
+      <View style={styles.header} className="">
         <TouchableOpacity onPress={() => router.back()}>
-          <Ionicons name="arrow-back-outline" size={34} color="black" />
+        <Ionicons name="chevron-back" size={34} color="white" />
         </TouchableOpacity>
-        <Text style={styles.title}>{item.name}</Text>
+        <Text style={styles.title} className="text-white">{item.name}</Text>
       </View>
       <View>
 
-        <Text className="text-3xl  mx-8 underline">Audio Shorts</Text>
+        <Text className="text-[20px] mx-8 mt-3 text-center text-[#84bdfd]">Audio Shorts</Text>
 
         <FlatList
           data={data}
@@ -66,7 +70,7 @@ const meditate = () => {
         <View className="h-1 w-full bg-black mt-3"></View>
       </View>
       <View>
-        <Recommended/>
+        <Recommend/>
       </View>
     </SafeAreaView>
   );
@@ -74,12 +78,12 @@ const meditate = () => {
 
 const Card = ({ item, index }) => {
   return (
-    <View style={styles.card} className="h-[230px] p-6 rounded-lg">
+    <View style={styles.card} className="h-[230px] bg-[#ffffff17] p-6 rounded-lg">
       <TouchableOpacity>
         <Image source={item.image} style={styles.cardImage} />
         <View className="mt-2">
-          <Text className="text-white">{item.name}</Text>
-          <Text className="text-xs text-gray-400">{item.subname}</Text>
+          <Text className="text-white text-lg font-bold text-center">{item.name}</Text>
+          <Text className="text-[13px] text-white text-center">{item.subname}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -116,8 +120,6 @@ const styles = StyleSheet.create({
   card: {
     marginHorizontal: 8,
     alignItems: 'center',
-
-    backgroundColor: "black"
   },
   cardImage: {
     width: 150,

@@ -3,7 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import ImageSlider from '../components/ImageSlider';
 import Meditate from '../components/Meditate';
 
@@ -11,34 +11,25 @@ import Meditate from '../components/Meditate';
 
 const home = () => {
   return (
-    <SafeAreaView className="flex-1 bg-gray-200 flex space-y-5 px-2" edges={['top']}>
+    <SafeAreaView className="flex-1 bg-[#000a15] flex space-y-5 px-2" edges={['top']}>
       <StatusBar style='dark' />
       <View className="flex-row justify-between  items-center ">
-        <View className="w-2/3">
+        <View className="w-1/3 ">
           <Text 
             style={{fontSize:hp(3.5)}}
-            className="font-bold tracking-wider text-neutral-700"
+            className="font-bold tracking-wider text-center text-[#ffff]"
           >
-            READY TO
-          </Text>
-          <Text 
-            style={{fontSize:hp(3.5)}}
-            className="font-bold tracking-wider text-orange-500"
-          >
-            MEDITATE
+            SOMA
           </Text>
         </View>
 
-        <View className="flex flex-row justify-between items-center space-y-2 px-2 w-1/3 " >
+        <View className="flex flex-row justify-around items-center space-y-2 px-2 w-1/3 " >
             <TouchableOpacity>
-            <Image source={require("../assets/images/profile.png")}
-               style={{height:50,width:50}}
-              className="rounded-full "  
-            />
+            <FontAwesome name="user-circle-o" size={38} color="white" />
             </TouchableOpacity>
             <TouchableOpacity>
-            <View className="bg-gray-600 p-1 rounded-full">
-            <Ionicons name="notifications" size={40} color="white" />
+            <View className=" p-1 rounded-full">
+            <Ionicons name="notifications" size={38} color="white" />
             </View>
             </TouchableOpacity>
         </View>

@@ -2,10 +2,10 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react
 import React from 'react';
 import { recommended } from '../constants/meditate';
 
-const Recommended = () => {
+const Recommend = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Recommended for you</Text>
+      <Text style={styles.title} className="text-[20px] mx-10 text-center   text-[#84bdfd]">Recommended for you</Text>
       <FlatList
         data={recommended}
         numColumns={2}
@@ -21,29 +21,27 @@ const Recommended = () => {
 
 const Card2 = ({ item }) => {
   return (
-    <View style={styles.card}>
+    <View style={styles.card} className="bg-[#ffffff17]">
       <TouchableOpacity>
         <Image source={item.image} style={styles.cardImage} />
         <View style={styles.cardTextContainer}>
-          <Text style={styles.cardTitle}>{item.name}</Text>
-          <Text style={styles.cardSubtitle}>{item.subname}</Text>
+          <Text style={styles.cardTitle} className="text-center text-white ">{item.name}</Text>
         </View>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default Recommended;
+export default Recommend;
 
 const styles = StyleSheet.create({
   container: {
     marginTop: 6,
   },
   title: {
-    fontSize: 24,
+
     marginLeft: 16,
     marginBottom: 12,
-    textDecorationLine: 'underline',
   },
   listContainer: {
     paddingBottom: 50,
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
   card: {
     width: '45%',
     marginBottom: 16,
-    backgroundColor: 'black',
+
     borderRadius: 8,
   },
   cardImage: {
@@ -68,8 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   cardTitle: {
-    color: 'white',
-    fontSize: 16,
+    fontSize: 16
   },
   cardSubtitle: {
     color: 'gray',
